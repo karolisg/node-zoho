@@ -18,7 +18,7 @@ CrmModule = (function(_super) {
     return CrmModule.__super__.constructor.apply(this, arguments);
   }
 
-    Crm.prototype.buildRecord = function (record) {
+    CrmModule.prototype.buildRecord = function (record) {
         var k, result, v;
         if (!_.isObject(record)) {
             throw new Error('Object required');
