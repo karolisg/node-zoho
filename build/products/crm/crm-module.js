@@ -420,7 +420,8 @@ CrmModule = (function(_super) {
     }
     query = {
       newFormat: 1,
-      id: id
+      id: id,
+      wfTrigger: true
     };
     options = {
       method: 'POST'
