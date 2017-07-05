@@ -26,7 +26,7 @@ Request = (function() {
 
   Request.prototype.request = function(cb) {
     var options;
-    options = _.pick(this._request, ['method']);
+    options = _.pick(this._request, ['method', 'form']);
     options.uri = url.format(this._request);
     return request(options, (function(_this) {
       return function(error, response, body) {

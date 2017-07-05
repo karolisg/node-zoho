@@ -381,13 +381,16 @@ CrmModule = (function(_super) {
       throw new Error('Requires as least one record');
     }
     query = {
-      newFormat: 1,
-      xmlData: this.build(records)
+      newFormat: 1
     };
     options = {
       method: 'POST'
     };
+
     url = this.buildUrl(query, ['insertRecords'], options);
+    url.form = {
+      xmlData: this.build(records)
+    };
     request = new Request(this, url);
     return request.request((function(_this) {
       return function(err, response) {
@@ -417,13 +420,15 @@ CrmModule = (function(_super) {
     }
     query = {
       newFormat: 1,
-      id: id,
-      xmlData: this.build(records)
+      id: id
     };
     options = {
       method: 'POST'
     };
     url = this.buildUrl(query, ['updateRecords'], options);
+    url.form = {
+      xmlData: this.build(records)
+    };
     request = new Request(this, url);
     return request.request((function(_this) {
       return function(err, response) {
