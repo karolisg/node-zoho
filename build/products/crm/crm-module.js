@@ -381,11 +381,11 @@ CrmModule = (function(_super) {
       throw new Error('Requires as least one record');
     }
     query = {
-      newFormat: 1
+      newFormat: 1,
+      wfTrigger: true
     };
     options = {
-      method: 'POST',
-      wfTrigger: true
+      method: 'POST'
     };
 
     url = this.buildUrl(query, ['insertRecords'], options);
