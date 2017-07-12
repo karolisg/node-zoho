@@ -384,7 +384,8 @@ CrmModule = (function(_super) {
       newFormat: 1
     };
     options = {
-      method: 'POST'
+      method: 'POST',
+      wfTrigger: true
     };
 
     url = this.buildUrl(query, ['insertRecords'], options);
