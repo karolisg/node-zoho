@@ -382,7 +382,8 @@ CrmModule = (function(_super) {
     }
     query = {
       newFormat: 1,
-      wfTrigger: true
+      wfTrigger: true,
+      duplicateCheck: 2
     };
     options = {
       method: 'POST'
