@@ -372,7 +372,7 @@ CrmModule = (function(_super) {
     })(this));
   };
 
-  CrmModule.prototype.insertRecords = function(records, cb) {
+  CrmModule.prototype.insertRecords = function(records, queryOptions, cb) {
     var options, query, request, url;
     if (!_.isArray(records)) {
       throw new Error('Requires array of records');
@@ -385,6 +385,9 @@ CrmModule = (function(_super) {
       wfTrigger: true,
       duplicateCheck: 2
     };
+    if (queryOptions !== null) {
+      query = Object.assign(queryOptions);
+    }
     options = {
       method: 'POST'
     };
