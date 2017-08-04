@@ -31,10 +31,11 @@ Request = (function() {
     return request(options, (function(_this) {
       return function(error, response, body) {
         if (error) {
+          error.data = options.form.xmlData;
           return cb(error, null);
         } else {
           _this.response = new Response(response);
-          return _this.response.parseBody(body, cb);
+          return _this.response.parseBody(body, options.form.xmlData, cb);
         }
       };
     })(this));

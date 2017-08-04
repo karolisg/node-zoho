@@ -33,7 +33,7 @@ Response = (function() {
     return false;
   };
 
-  Response.prototype.parseBody = function(body, cb) {
+  Response.prototype.parseBody = function(body, xmlData, cb) {
     if (!body) {
       throw new Error('Requires body');
     }
@@ -63,7 +63,8 @@ Response = (function() {
             }
             return cb({
               code: _this.code,
-              message: _this.message
+              message: _this.message,
+              xmlData: xmlData
             }, _this);
           } else if ((_ref2 = _this.data) != null ? (_ref3 = _ref2.response) != null ? _ref3.nodata : void 0 : void 0) {
             error = _this.data.response.nodata;
