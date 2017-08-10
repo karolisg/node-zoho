@@ -386,7 +386,7 @@ CrmModule = (function(_super) {
       duplicateCheck: 2
     };
     if (queryOptions !== null) {
-      query = Object.assign(queryOptions);
+      query = Object.assign(queryOptions, query);
     }
     options = {
       method: 'POST'
