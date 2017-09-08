@@ -18,7 +18,7 @@ CustomModule4 = (function(_super) {
     return CustomModule4.__super__.constructor.apply(this, arguments);
   }
 
-  CustomModule4.prototype.name = 'CustomModule3';
+  CustomModule4.prototype.name = 'CustomModule4';
 
   CustomModule4.prototype.getMyRecords = function() {
     throw new Error('Not Implemented');
